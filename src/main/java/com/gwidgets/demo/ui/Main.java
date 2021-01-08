@@ -11,7 +11,7 @@ import static com.vaadin.ui.themes.ValoTheme.BUTTON_LINK;
 import static com.vaadin.ui.themes.ValoTheme.MENU_ITEM;
 
 @SpringUI(path="app")
-@StyleSheet({"http://localhost:8080/styles.css"})
+@StyleSheet({"http://localhost:8081/styles.css"})
 public class Main extends UI {
 
     @Autowired
