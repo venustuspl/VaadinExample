@@ -27,14 +27,16 @@ public class Add extends Composite implements View {
         TextField brandInput = new TextField("Brand: ");
         TextField modelInput = new TextField("Model: ");
         TextField pictureLinkInput = new TextField("Picture Link: ");
+        TextField boughtDate = new TextField("Bought date: ");
         Button button = new Button("Add", clickEvent -> {
-            repository.save(new Car(brandInput.getValue(), modelInput.getValue(), pictureLinkInput.getValue()));
+            repository.save(new Car(brandInput.getValue(), modelInput.getValue(), pictureLinkInput.getValue(), boughtDate.getValue()));
             Notification.show("saved");
         });
         formLayout.addComponent(title);
         formLayout.addComponent(brandInput);
         formLayout.addComponent(modelInput);
         formLayout.addComponent(pictureLinkInput);
+        formLayout.addComponent(boughtDate);
         formLayout.addComponent(button);
         setCompositionRoot(formLayout);
     }

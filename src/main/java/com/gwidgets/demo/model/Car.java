@@ -13,7 +13,7 @@ public class Car {
 
     @Id
     @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator", parameters = {@Parameter(name="uuid_gen_strategy_class", value="org.hibernate.id.uuid.CustomVersionOneStrategy")})
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator", parameters = {@Parameter(name = "uuid_gen_strategy_class", value = "org.hibernate.id.uuid.CustomVersionOneStrategy")})
     String id;
 
     String brand;
@@ -22,13 +22,16 @@ public class Car {
 
     String pictureLink;
 
+    String dateTime;
+
     public Car() {
     }
 
-    public Car(String brand, String model, String pictureLink) {
+    public Car(String brand, String model, String pictureLink, String dateTime) {
         this.brand = brand;
         this.model = model;
         this.pictureLink = pictureLink;
+        this.dateTime = dateTime;
     }
 
     public String getId() {
@@ -61,5 +64,13 @@ public class Car {
 
     public void setPictureLink(String pictureLink) {
         this.pictureLink = pictureLink;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
     }
 }

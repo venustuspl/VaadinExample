@@ -20,6 +20,10 @@ public class Main extends UI {
     @Autowired
     List listView;
 
+    @Autowired
+    DateList dateList;
+
+
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
@@ -31,6 +35,7 @@ public class Main extends UI {
         navigator.addView("", addView);
         navigator.addView("add", addView);
         navigator.addView("list", listView);
+        navigator.addView("dateList", dateList);
 
         CssLayout sideNav = new CssLayout();
         sideNav.setSizeFull();
@@ -42,8 +47,11 @@ public class Main extends UI {
         link1.addStyleNames(BUTTON_LINK, MENU_ITEM);
         Button link2 = new Button("List", e -> navigator.navigateTo("list"));
         link2.addStyleNames(BUTTON_LINK, MENU_ITEM);
+        Button link3 = new Button("Date List", e -> navigator.navigateTo("dateList"));
+        link3.addStyleNames(BUTTON_LINK, MENU_ITEM);
         sideNav.addComponent(link1);
         sideNav.addComponent(link2);
+        sideNav.addComponent(link3);
         rootLayout.addComponent(sideNav);
         rootLayout.addComponent(mainarea);
         setContent(rootLayout);
